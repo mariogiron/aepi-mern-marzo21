@@ -1,0 +1,16 @@
+{
+  "name": "miprimerserver",
+  "version": "1.0.0",
+  "description": "Mi primer servidor con Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "startdev": "nodemon index.js"
+  },
+  "author": "Mario Girón",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1"
+  }
+}
