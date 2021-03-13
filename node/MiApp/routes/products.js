@@ -1,12 +1,17 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    res.send('Petición GET /products');
+    res.render('products/list', {
+        mensaje: 'Hola Pug!',
+        numProductos: 4,
+        nombres: ['Mario', 'Pedro', 'Clara', 'Raúl', 'Sara'],
+        activo: false
+    });
 });
 
 router.get('/edit', (req, res) => {
     console.log('FECHA: ', req.fechaActual);
-    res.send('Petición GET /productos/edit');
+    res.render('products/edit');
 });
 
 // localhost:3000/products/filtro?departamento=hogar&pagina=2
