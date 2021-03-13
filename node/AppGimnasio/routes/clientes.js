@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         .catch(error => console.log(error));
 });
 
-// GET /clientes/activos
+//  GET/clientes/activos
 router.get('/activos', (req, res) => {
     Cliente.activos()
         .then(clientes => {
