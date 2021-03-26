@@ -14,7 +14,7 @@ router.get('/insert_v1', (req, res) => {
         .then(nuevoCliente => {
             res.json(nuevoCliente);
         })
-        .catch(error => console.log(error));
+        .catch(error => res.json(error));
 });
 
 // Inserción con método create

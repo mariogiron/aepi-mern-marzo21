@@ -2,11 +2,30 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const clienteSchema = new Schema({
-    nombre: String,
-    apellidos: String,
-    email: String,
-    cuota: Number,
-    activo: Boolean
+    nombre: {
+        type: String,
+        required: [true, 'El campo nombre es obligatorio']
+    },
+    apellidos: {
+        type: String,
+        minlength: 4,
+        maxlength: 10
+    },
+    email: {
+        type: String,
+        match: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    },
+    cuota: {
+        type: Number,
+        validate: {
+            validator: function (value) {
+                return (value % 2 === 0);
+            },
+            message: 'La cuota debe ser par'
+        }
+    },
+    activo: Boolean,
+    dni: String
 });
 
 clienteSchema.virtual('nombreCompleto').get(function () {

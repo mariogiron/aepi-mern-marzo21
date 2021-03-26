@@ -1,0 +1,38 @@
+GET http://localhost:3000/api/clientes
+
+###
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+    "nombre": "garcia",
+    "email": "rosa@aq.it",
+    "cuota": 10,
+    "activo": true,
+    "dni": "22222222S"
+}
+
+###
+PUT http://localhost:3000/api/clientes/604bf7059c7167039825381c
+Content-Type: application/json
+
+{
+    "nombre" : "Ana",
+    "apellidos" : "González",
+    "email" : "anagon@gmail.com",
+    "cuota" : 20,
+    "activo" : true
+}
+
+###
+DELETE http://localhost:3000/api/clientes/604bf7059c7167039825381c
+
+###
+POST http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+
+{
+    "username": "mario",
+    "email": "mario@mail.com",
+    "password": "123"
+}
