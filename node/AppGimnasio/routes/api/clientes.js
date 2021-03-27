@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const Cliente = require('../../models/Cliente');
 const { check, validationResult } = require('express-validator');
+const { checkAdmin } = require('../middlewares');
 
 router.get('/', (req, res) => {
+    console.log("USER_ID", req.usuarioId);
     Cliente.find()
         .then(clientes => {
             res.json(clientes);
@@ -12,7 +14,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', [
+router.post('/', checkAdmin, [
     check('nombre', 'El campo nombre es obligatorio').exists(),
     check('apellidos', 'El campo apellidos es obligatorio').exists(),
     check('email', 'El email es incorrecto').exists().isEmail(),
