@@ -6,7 +6,7 @@ class Cronometro extends Component {
         super(props);
 
         this.state = {
-            contador: 10,
+            contador: 4,
             mensaje: 'Este es mi mensaje'
         };
 
@@ -24,6 +24,7 @@ class Cronometro extends Component {
 
             if (this.state.contador === 0) {
                 clearInterval(interval);
+                this.props.cronometroFinalizado();
             }
         }, 1000);
     }
