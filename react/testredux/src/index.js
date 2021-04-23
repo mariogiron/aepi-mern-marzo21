@@ -3,22 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import axios from 'axios';
+import { createStore } from 'redux';
+import reducer from './store/reducer';
+import { Provider } from 'react-redux';
 
-axios.interceptors.request.use(request => {
-  console.log('REQUEST', request);
-
-  return request;
-});
-
-axios.interceptors.response.use(response => {
-  console.log('RESPONSE', response);
-  return response.data;
-});
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

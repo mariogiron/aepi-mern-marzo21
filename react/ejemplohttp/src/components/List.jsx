@@ -11,9 +11,9 @@ function List() {
 
     useEffect(() => {
         axios.get(`https://swapi.dev/api/people/?format=json&page=${page}`)
-            .then(response => {
-                setPeople(response.data.results);
-                setNumPages(Math.ceil(response.data.count / 10));
+            .then(data => {
+                setPeople(data.results);
+                setNumPages(Math.ceil(data.count / 10));
             });
     }, [page]);
 
