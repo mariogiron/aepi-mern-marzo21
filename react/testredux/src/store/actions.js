@@ -1,3 +1,4 @@
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const MENSAJE_CHANGE = 'MENSAJE_CHANGE';
+export const ADD_CONTACTO = 'ADD_CONTACTO';

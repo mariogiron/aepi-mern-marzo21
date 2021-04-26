@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', checkAdmin, [
+router.post('/', [
     check('nombre', 'El campo nombre es obligatorio').exists(),
     check('apellidos', 'El campo apellidos es obligatorio').exists(),
     check('email', 'El email es incorrecto').exists().isEmail(),

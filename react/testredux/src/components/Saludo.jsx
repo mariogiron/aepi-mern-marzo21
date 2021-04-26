@@ -11,7 +11,7 @@ function Saludo(props) {
     );
 }
 
-const mapStateToProps = state => ({ msg: state.mensaje, stock: state.stock });
+const mapStateToProps = state => ({ msg: state.root.mensaje, stock: state.products.stock });
 
 const mapDispatchToProps = dispatch => {
     return {

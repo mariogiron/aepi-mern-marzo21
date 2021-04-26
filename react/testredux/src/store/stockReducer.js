@@ -1,24 +1,21 @@
 import * as actionTypes from './actions';
 
 const initialState = {
-    logged: false,
-    mensaje: 'Mensaje inicial',
-    contactos: []
+    stock: 100
 }
 
 const reducer = (state = initialState, action) => {
-    console.log(action)
     switch (action.type) {
-        case actionTypes.MENSAJE_CHANGE: {
+        case actionTypes.ADD_PRODUCT: {
             return {
                 ...state,
-                mensaje: action.value
+                stock: state.stock + 1
             }
         }
-        case actionTypes.ADD_CONTACTO: {
+        case actionTypes.REMOVE_PRODUCT: {
             return {
                 ...state,
-                contactos: state.contactos.concat(action.value)
+                stock: state.stock - 1
             }
         }
     }

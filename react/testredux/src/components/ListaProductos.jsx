@@ -10,7 +10,7 @@ function ListaProductos(props) {
     </div>);
 }
 
-const mapStateToProps = state => ({ stock: state.stock });
+const mapStateToProps = state => ({ stock: state.products.stock });
 
 const mapDispatchToProps = (dispatch) => {
     return {
